@@ -1,17 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-		<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
-		<title>运营工具-日志查询</title>
-		<meta content="" name="keywords">
-		<meta content="" name="description">
-			<link href="http://i3.qasbs.com/trunk/css/admin/style.css" type="text/css" rel="stylesheet">
-			<script src="http://i3.qasbs.com/trunk/js/admin/jquery.js" type="text/javascript"></script>
-			<script src="http://i3.qasbs.com/trunk/js/admin/component.sbsAjax.js" type="text/javascript"></script>
-			<script src="http://i3.qasbs.com/trunk/js/admin/json2.js" type="text/javascript"></script>
-			<script src="http://i3.qasbs.com/trunk/js/admin/json2.js" type="text/javascript"></script>
-			<script src="http://i3.qasbs.com/trunk/js/admin/component.admincp.js" type="text/javascript"></script>
-			<script src="http://i3.qasbs.com/trunk/js/admin/component.calendar.js" type="text/javascript"></script>
-			<script src="http://i3.qasbs.com/trunk/js/admin/component.validate.js" type="text/javascript"></script>
-	</head>
+
 	<body>
 <div id="content">
 			<div class="itemtitle"><h3>日志查询</h3></div>
