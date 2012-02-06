@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>calendar</title>
+    <link href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        var AM_Config = {
+            baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+        };
+    </script>
+    <script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+</head>
+<body>
+<!--=S calendar-mod -->
+<p>
+    <label>基本用法：</label>
+    <input type="text" class="calendar"/>
+</p>
+
+<p>
+    <label>默认日期：</label>
+    <input value="2010-05-03" type="text" class="calendar"/>
+</p>
+
+<p>
+    <label>显示时间：</label>
+    <input type="text" class="calendar show-time"/>
+</p>
+
+<p>
+    <label>时间上限：</label>
+    <input type="text" class="calendar prev-limit"/>
+</p>
+
+<p>
+    <label>时间关键字 today：</label>
+    <input type="text" class="calendar today"/>
+</p>
+
+<p>
+    <label>时间下限：</label>
+    <input type="text" class="calendar next-limit"/>
+</p>
+
+<p>
+    <label>回调函数：</label>
+    <input type="text" class="calendar callback"/>
+</p>
+
+
+<!--=E calendar-mod -->
+<script>
+    AM("calendar", function() {
+        var gl = function() {
+            return this;
+        };
+        $(".calendar").click(function(ev) {
+            var $this = $(this),arg = [ev,0,null,0,0,function() {
+            }];
+            switch (true) {
+                case $this.hasClass("show-time"): arg[1] = 1;break;
+                case $this.hasClass("prev-limit"): arg[3] = "2011-10-2";break;
+                case $this.hasClass("today"): arg[3] = "today";break;
+                case $this.hasClass("next-limit"): arg[4] = "2011-11-1";break;
+                case $this.hasClass("callback"): arg[5] = function(c) {
+                    alert(c);
+                };break;
+                default:break;
+            }
+            showcalendar.apply(gl(), arg);
+        })
+    });
+</script>
+</body>
+</html>

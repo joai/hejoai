@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312">
+<title>user-mod</title>
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" />
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/home/default/style.css" />
+</head>
+<body>
+
+<!--=S user-mod -->
+<div class="user-mod">
+    <h1><a href="">幺幺</a>的空间</h1>
+	<dl id="city-switch">
+		<dt>[空间切换&nbsp;&nbsp;]</dt>
+		<dd class="select-bd"><div align="center"><img src="http://i3.sbsnew.com/trunk/css/forum/default/images/loading.gif"></div><a id="switch-more" class="switch-unfold" href="javascript:;"><em>展开</em></a>
+		</dd>
+	</dl>
+	<p class="link3">粉丝：<a href="">1</a><em class="pipe">|</em>关注：<a href="">1</a><em class="pipe">|</em>
+	19楼金币：10<em class="pipe">|</em>威望：10点（V1级：单身公寓）
+	</p>
+	<a href="" target="_blank"><img id="smallCurrent" class="user-face" alt="chenjie" src="http://avatar2.citysbs.com/default.jpg"></a>
+</div>
+<!--=E user-mod -->
+
+<script type="text/javascript">
+	var AM_Config = {
+		baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+	};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+<script type="text/javascript">
+	AM.ready("ajax","homeCitySwitch", function() {
+            App.ajax("#sign-save", {
+                type: 'GET',
+                url: 'http://jinhua.19lou.com/user/sitetrace/get_sites',
+                data:{uid:'13709653'},
+                cache:true,
+                success: function(res) {
+                   if(res.success == true){
+                      var datas = res.data;
+                      if(datas!=undefined){
+                          var homeSites = new Array();
+                          for(var i in datas){
+                              var _ajaxurl = "http://" + datas[i].domain + "/user/sitetrace/get_data?uid=" + '13709653';
+                              homeSites[i] = {cname:datas[i].displayName,ajaxurl:_ajaxurl,curl:"http://" + datas[i].domain + "/user",cnew:0,cdata:[[0,0,"http://" + datas[i].domain + "/user/myinfo/thread"],[1,0,"http://" + datas[i].domain + "/user/album"],[2,0,"http://" + datas[i].domain + "/user/myinfo/favforum"],[3,0,"http://" + datas[i].domain + "/user/attention"],[4,0,"http://" + datas[i].domain + "/user/fans"],[5,0,"http://" + datas[i].domain + "/user/message/inbox"],[6,0,"http://" + datas[i].domain + "/user/notice/system"],[7,0,"http://" + datas[i].domain + "/user/myinfo/referthread"]]};
+                          }
+                          if(datas.length > 0){
+                              $("#city-switch").show();
+                              App.homeCitySwitch({sites:homeSites, cssUrl: "http://img2.citysbs.com/css/0.5.7.20/forum/"});
+                          }
+                      }
+                   } else {
+                   }
+                },
+                error: function() {
+                },
+                dataType: 'json'
+            });
+        });
+</script>
+
+</body>
+</html>

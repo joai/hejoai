@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<title>二级导航</title>
+<meta charset="gb2312">
+<link href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" rel="stylesheet" />
+<meta name="keywords" content="关键词" />
+<meta name="description" content="描述" />
+<script language="javascript"> 
+var AM_Config = {
+	baseUrl: "http://i3.sbsnew.com/trunk/js/forum",
+	baseVersion:""
+};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+</head>
+<body>
+<!-- subheader start-->
+<div id="sub-header">
+	<div class="layout">
+
+		<h2 id="sub-logo">
+			<a href="http://jinhua.19lou.com"><img src="http://att2.citysbs.com/jinhua/2011/06/09/131654_dkldukud_079a11394f24b0378ed69716d55ebd7f.jpg" alt="金华社区" title="金华社区" /></a>
+
+		</h2>
+
+		<div id="sub-menu">
+			<dl class="menu-nav">
+                <dt><a href="http://jinhua.19lou.com">入城口</a></dt>
+				<dd class="nav-floor">
+					<ol>
+						<li><a title="网友接待室" href="http://jinhua.19lou.com/forum-873-1.html">网友接待室</a></li>
+
+						<li><a title="婺州茶馆" href="http://jinhua.19lou.com/forum-874-1.html">婺州茶馆</a></li>
+						<li><a title="恋爱情感" href="http://jinhua.19lou.com/forum-879-1.html">恋爱情感</a></li>
+						<li><a title="佳人有约" href="http://jinhua.19lou.com/forum-2162-1.html">佳人有约</a></li>
+						<li><a title="美食俱乐部" href="http://jinhua.19lou.com/forum-875-1.html">美食俱乐部</a></li>
+						<li><a title="时尚达人" href="http://jinhua.19lou.com/forum-878-1.html">时尚达人</a></li>
+						<li><a title="横店八卦王" href="http://jinhua.19lou.com/forum-887-1.html">横店八卦王</a></li>
+
+						<li><a title="旅游休闲" href="http://jinhua.19lou.com/forum-876-1.html">旅游休闲</a></li>
+						<li><a title="摄影俱乐部" href="http://jinhua.19lou.com/forum-1425-1.html">摄影俱乐部</a></li>
+						<li><a title="婚姻课" href="http://jinhua.19lou.com/forum-881-1.html">婚姻课</a></li>
+						<li><a title="亲子乐园" href="http://jinhua.19lou.com/forum-880-1.html">亲子乐园</a></li>
+						<li><a title="装修大本营" href="http://jinhua.19lou.com/forum-2166-1.html">装修大本营</a></li>
+						<li><a title="金华租房" href="http://jinhua.19lou.com/forum-883-1.html">金华租房</a></li>
+
+						<li><a title="金华招聘" href="http://jinhua.19lou.com/forum-884-1.html">金华招聘</a></li>
+						<li><a title="金华二手闲置" href="http://jinhua.19lou.com/forum-886-1.html">金华二手闲置</a></li>
+						<li><a title="义乌会" href="http://jinhua.19lou.com/forum-882-1.html">义乌会</a></li>
+						<li><a title="东阳会" href="http://jinhua.19lou.com/forum-885-1.html">东阳会</a></li>
+						<li><a title="浦江会" href="http://jinhua.19lou.com/forum-2119-1.html">浦江会</a></li>
+						<li><a title="永康会" href="http://jinhua.19lou.com/forum-2168-1.html">永康会</a></li>
+
+						<li><a title="武义会" href="http://jinhua.19lou.com/forum-2169-1.html">武义会</a></li>
+						<li><a title="兰溪会" href="http://jinhua.19lou.com/forum-2167-1.html">兰溪会</a></li>
+						<li><a title="磐安会" href="http://jinhua.19lou.com/forum-2170-1.html">磐安会</a></li>
+						<li><a title="同乡会" href="http://jinhua.19lou.com/forum-1346-1.html">同乡会</a></li>
+					</ol>
+				</dd>
+            </dl>
+
+			<a href="http://jinhua.19lou.com/user">我的空间</a>
+			
+			<a href="http://jinhua.19lou.com/relation/starshare">社区达人</a>
+		</div>
+
+        <!-- login status title START -->
+		<script id="PG_LOGIN_STATUS" type="text/javascript" src="http://jinhua.19lou.com/login/title/tiny?t=1315962688534"></script>
+        <!-- login status title END -->
+
+		<div id="sub-search">
+			<input id="navSearchKeyword" name="navSearchKeyword" class="sub-search-key" placeholder="请输入搜索关键词" type="text" />
+			<dl class="sub-serach-switch">
+				<dt>帖子</dt>
+				<dd>
+					<a href="javascript:;">帖子</a>
+					<a href="javascript:;">版块</a>
+
+					<a href="javascript:;">用户</a>
+				</dd>
+			</dl>
+			<a id="searchBtn" class="sub-search-btn">搜</a>
+		</div>
+	</div>
+
+</div>
+<!-- subheader end-->
+<script language="javascript" type="text/javascript">
+AM("fixed",function(){
+
+	var navFloor = $("#sub-menu").find(".menu-nav"),navFloorHide;
+
+	navFloor.hover(function(){
+		clearTimeout(navFloorHide);
+		navFloor.addClass("menu-nav-show");
+	},function(){
+		navFloorHide = setTimeout(function(){
+			navFloor.removeClass("menu-nav-show");
+		},1000)
+	});
+
+	App.placeholder();
+
+	$(".sub-search-key").focus(function(){
+		$(this).parent().addClass("focus");
+	}).blur(function(){
+		$(this).parent().removeClass("focus");
+	});
+
+	App.selectBox($(".sub-serach-switch"));
+
+	App.fixed({obj:"#message_html", top: "44px"});
+
+	// 关掉提醒
+	$("#sub-header").find(".close").click(function(){
+		$(this).parent().hide();
+	});
+})
+</script>
+</body>
+</html>

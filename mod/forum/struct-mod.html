@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="gb2312">
+        <title>struct-mod</title>
+        <link href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" rel="stylesheet" />
+        <link href="http://i3.sbsnew.com/trunk/css/forum/default/post.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!--=S 结构化发帖模块-->
+
+				        <div class="struct-mod">
+				            <h3 class="struct-hd"><span>宝贝信息</span></h3>
+                            <div class="struct-bd">
+                                <table >
+                                    <tbody>
+                                        <tr>
+                                            <th><label for="brand-name">品牌名称：</label></th>
+                                            <td><input  id="brand-name" class="txt" type="text"/></td>
+                                        </tr>
+                                       
+                                        <tr>
+                                            <th><label for="business">行业：</label></th>
+                                            <td><input  id="business" class="txt" type="text"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="company-address">公司地址：</label></th>
+                                            <td><input size="40"  id="company-address" class="txt" type="text"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="treasure-name">宝贝名称：</label></th>
+                                            <td><input  id="treasure-name" class="txt" type="text"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="number">数量：</label></th>
+                                            <td><input  id="number" class="txt" type="text"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="upload-pic">上传宝贝图片：</label></th>
+                                            <td>
+                                             <dl class="attach-mod struct-attach">
+									<dd id="upattachMod" class="attach-bd upattach-mod">
+									</dd>
+								</dl>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="auction-type">竞拍类型：</label></th>
+                                            <td>
+                                                <select id="auction-type" name="">
+                                                    <option value="0">金币抽奖</option>
+                                                    <option value="1">金币兑换</option>
+                                                    <option value="2">金币竞拍</option>
+                                                    <option value="3">金币秒杀</option>
+                                                </select>
+                                                <span class="color3">活动所得金币由19楼系统回收</span>
+                                                                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="cost">抽奖费用：</label> <br/>
+                                            </th>
+                                            <td>
+                                                <input  id="cost" size="5" class="txt" type="text"/>
+                                                <span class="color9">金币</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="time-start">活动起止时间：</label></th>
+                                            <td>
+                                                <input   onclick="showcalendar(event)" id="time-start" size="10" class="txt" type="text"/>
+                                                <span class="color9">至</span>
+                                                <input   onclick="showcalendar(event)" id="time-end" size="10" class="txt" type="text"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="receive">领取截至时间：</label></th>
+                                            <td>
+                                                <input onclick="showcalendar(event)"  id="receive" size="10" class="txt" type="text"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><label for="receive-address-19lou">宝贝领取地点：</label></th>
+                                            <td>
+                                                <label >
+                                                    <input checked name="receive-address"  id="receive-address-19lou"  class="txt" type="radio"/>
+                                                    19楼前台领取
+                                                </label>
+                                                &nbsp;
+                                                <label >
+                                                    <input  name="receive-address"  id="receive-address-other"  class="txt" type="radio"/>
+                                                    其他地址
+                                                </label>
+                                                 <input type="text" class="txt"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        	<th>宝贝介绍：</th>
+                                            <td>
+                                                <textarea  id="content" name="content" style="width:720px;"></textarea>
+                                                <input id="contentWithBBCode" name="contentWithBBCode" type="hidden" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        	<th></th>
+                                            <td>
+                                                <a href="javascript:;" class="post-submit submit-btn"><span>写好了，提交</span></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+					             </table>
+                            </div>
+	        </div>	             
+        <!--=S 结构化发帖模块-->
+    <script type="text/javascript">
+        var AM_Config = {
+            baseUrl: "http://i3.sbsnew.com/trunk/js/forum",
+            baseVersion:"?v=0.5.8.1130.01"
+        };
+    </script>
+    <script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js?v=0.5.8.1130.01"></script>
+<script type="text/javascript">
+        //广告
+        AM('cycle','ad');
+
+        //编辑器
+        AM('showTips','calendar','http://i3.sbsnew.com/trunk/js/forum/editor/core/core.js?v=0.5.8.1130.01',function(){
+                		//编辑器
+        UE.create({
+           textarea:"#content",
+           
+           
+           cont:"",
+           advance: {link: {domain:[".19louimg.cn/",".baidu.com/",".19lou.com/",".att2.citysbs.com/",".dukuai.com/",".taobao.com/"]}, hide :0 },
+           plugins: {smiley: {url:"http://www.19lou.com/util/smile"},image: {domain:[".19louimg.cn/",".19lou.com/",".baidu.com/",".dukuai.com/",".citysbs.com/",".19lou.com/",".baidu.com/",".static.19lou.com/",".dukuai.com/",".citysbs.com/","i3.dukuai.com","sns01.19louimg.cn"]},video: {domain:[".ku6.com/",".youku.com/",".19louimg.cn/",".dukuai.com/",".local.com/",".tudou.com/",".sina.com.cn/",".video.sina.com.cn/",".att2.citysbs.com/",".share.vrs.sohu.com/"]},music: {app: 'http://www.xiami.com/app/nineteen/search/'}},
+           attachDomain: "http://att2.citysbs.com/hangzhou",
+           leave:{tip:"你确认要离开本页面吗？离开后你输入的内容将可能不被保存"}
+           
+        },function(){
+		    $(document.getElementById("editorIfr").contentWindow.document).keydown(function(event){
+				if (event.ctrlKey && (event.which == '13' || event.which == '10')){
+					event.preventDefault();
+					$("#publishButton").click();	
+				}
+			});
+
+            //扫描草稿
+            //Draft.scan($("#selectedFid").val());
+        });
+
+      //上传组件
+     	initSwfUpload('164');	     
+ 
+ 		function initSwfUpload(selectedFid){        		  
+		        AM("swfupload.active",function(){
+		            var settings = {
+		               file_post_name:"file",
+		               swf_domain:"http://i3.sbsnew.com/trunk/js/forum",
+		               upload_url: "http://www.19lou.com/util/upload?uid=16243483"+"&fid="+selectedFid,
+		               custom_settings:{progressTarget:"up_list"},
+		               file_size_limit : "5 MB",
+		               file_types : "*.jpg;*.png;*.jpeg;",
+		               file_types_description : "All Files",
+		               file_upload_limit : 10,
+		               file_queue_limit : 10,
+		               progress:new FileProgress(),
+		               initData:[],
+		               editor:null,
+		               debug: false
+		            };
+		            new SWFUpload(settings);
+		        })
+        	}
+
+    // 提交
+    $('.post-submit').click(function(){
+                App.tips({
+message:"金币活动发起成功，我们将在3个工作日内与你联系",
+autoclose:3
+                    })        
+            })
+
+    $('.struct-mod .struct-hd').click(function(){
+            var $this = $(this),
+                $structMod = $this.parent('.struct-mod'),
+                $structBd = $structMod.find('.struct-bd');
+            if($structMod.hasClass('struct-hide'))
+            $structBd.slideDown(500,function(){
+                    $structMod.removeClass('struct-hide');
+                }) 
+            else{
+                $structBd.height($structBd.height()); // fix slideUp jump problem
+                $structBd.slideUp(500,function(){
+                        $structMod.addClass('struct-hide');
+                        })
+            }
+    
+
+            })
+
+
+        
+                })
+
+
+
+    </script>
+    </body>
+</html>

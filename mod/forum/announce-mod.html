@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="gb2312">
+	<title>announce-mod</title>
+	<link href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" rel="stylesheet" />
+</head>
+<body>
+	<!--=S announce-mod -->
+	<div id="announce">
+		<p>系统维护公告：本站定于12月5日晚上18：00&mdash;&mdash;22：00进行系统维护，届时网站部份楼层将不能访问，敬请谅解。</p>
+		<a href="javascript:;" class="close">点击关闭</a>
+	</div>
+	<!--=E announce-mod -->
+	<script type="text/javascript">
+		var AM_Config = {
+			baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+		};
+	</script>
+	<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+	<script type="text/javascript">
+		AM.ready(function() {
+			var announce = $("#announce");
+			announce.find(".close").click(function() {
+				announce.fadeOut();
+			})
+		})
+	</script>
+</body>
+</html>

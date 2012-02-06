@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="gb2312">
+	<title>tips-mod</title>
+	<link href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" rel="stylesheet" />
+</head>
+<body>
+	<a id="showTipsRight" href="javascript:;">正确提示</a>
+	<a id="showTipsWran" href="javascript:;">警告提示</a>
+	<a id="showTipsError" href="javascript:;">错误提示</a>
+	<script type="text/javascript">
+		var AM_Config = {
+			baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+		};
+	</script>
+	<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+	<script type="text/javascript">
+		AM.ready("showTips", function() {
+			$("#showTipsRight").click(function() {
+				App.tips({message:"基本资料更新成功！", autoclose:3});
+			})
+			$("#showTipsWran").click(function() {
+				App.tips({type:"warn",message:"用户名不能为空", autoclose:3});
+			})
+			$("#showTipsError").click(function() {
+				App.tips({type:"error",message:"请输入当前密码", autoclose:3});
+			})
+		})
+	</script>
+</body>
+</html>

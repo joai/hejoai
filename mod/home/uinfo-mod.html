@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312">
+<title>uinfo-mod</title>
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" />
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/home/default/style.css" />
+</head>
+<body>
+
+<!--=S uinfo-mod -->
+<div class="uinfo-mod clearall">
+	<a href="" target="_blank"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/A120x120.gif"></a>
+	<p class="uinfo-mod-data"><a href="" class="left co"><em>36382</em>粉丝</a><a href="" class="left"><em>36331</em>关注</a><a href=""><em>224</em>帖子</a></p>
+	<p class="color6">金币：4648 </p>
+	<p class="color6">等级：城市管理</p>
+	<a href="javascript:;" class="uinfo-mod-mes mt10" onclick="javascript:SendMessage.open('金华情感');"><span>发私信</span></a>
+	<span class="uinfo-mod-ing link6 JHisAttention" id="remove_attention_22510867" userId="22510867">已关注<em class="pipe">|</em><a href="javascript:;">取消</a></span>
+	<a href="javascript:;" class="uinfo-mod-concern JHisAttention" id="add_attention_22510867" userId="22510867" style="display:none"><span>关注TA</span></a>
+</div>
+<!--=E uinfo-mod -->
+
+<script type="text/javascript">
+	var AM_Config = {
+		baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+	};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+<script type="text/javascript">
+       AM.ready('home', function(){
+           $(".JHisAttention").click(function(){
+               var uid = $(this).attr("userId");
+               if($(this).hasClass("uinfo-mod-concern") || $(this).hasClass("icon-follow")){
+                    AttentionAct.attention({uids:[uid],callback:function(res){
+                        if(res.success){
+                                $("#add_attention_"+uid).hide();
+                                $("#remove_attention_"+uid).show();
+                                AttentionAct.changeGroup(res.data);
+                        }
+                    }
+                    });
+               }else{
+                    AttentionAct.cancelAttention({uid:uid,callback:function(res){
+                        if(res.success){
+                                $("#remove_attention_"+uid).hide();
+                                $("#add_attention_"+uid).show();
+                                App.tips({type: "right", message:"取消关注成功", autoclose:3,redirectUrl:location.href});
+                        }
+                    }
+                    })
+               }
+           });
+            AttentionStatus.check('13709653','http://jinhua.19lou.com/user/attention/check')
+            //关注TA
+            $(".JFollowOpt").click(function(){
+                var uid = $(this).attr("userId");
+                AttentionAct.attention({uids:[uid]});
+            })
+       });
+    </script>
+
+</body>
+</html>

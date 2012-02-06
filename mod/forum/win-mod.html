@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="gb2312">
+	<title>win-mod</title>
+	<link href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" rel="stylesheet" />
+</head>
+<body>
+	<p>
+		<strong>实例：</strong>
+		<a href="javascript:;" id="login">登录</a>
+		<a href="javascript:;" id="report">举报</a>
+		<a href="javascript:;" id="sms">发送短信息</a>
+		<a href="javascript:;" id="favorite">收藏成功提示</a>
+	</p>
+	<p>
+		<strong>通用：</strong>
+		<a href="javascript:;" id="normal">列表</a>
+		<a href="javascript:;" id="table">表格</a>
+		<a href="javascript:;" id="data">数据排列</a>
+	</p>
+	<script type="text/javascript">
+		var AM_Config = {
+			baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+		};
+	</script>
+	<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+	<script type="text/javascript">
+		AM.ready(function(){
+			
+			//登录
+			$("#login").click(function(){
+				var content = '';
+					content = content + '<ul class="win-form link0">';
+					content = content + '<li class="login-name"><label class="lab" for="uname">用户名：</label><input type="text" id="uname" class="txt" tabindex="1" />&nbsp;<a href="#" target="_blank">新用户注册</a></li>';
+					content = content + '<li class="login-pass"><label class="lab" for="upwd">密　码：</label><input type="text" id="upwd" class="txt" tabindex="2" />&nbsp;<a href="#" target="_blank">忘记密码？</a></li>';
+					content = content + '<li class="login-auto"><input type="checkbox" id="uauto" class="checkbox" tabindex="3" />&nbsp<label for="uauto">下次自动登录</label></li>';
+					content = content + '<li class="login-related"><a id="loginWidowButton" class="confirm-btn"><span>登录</span></a>&nbsp&nbsp<a id="cancel_id" class="options-btn"><span>取消</span></a><span class="win-tip"></span></li>';
+					content = content + '<li class="login-related color9" id="accountbtn">或者<a href="javascript:;" class="account-qq" >用QQ账号登录</a><a href="javascript:;" class="account-sina">用微博账号登录</a></li>';
+					content = content + '</ul>';
+				AM("showWin",function(){
+					App.win({id:'win-login',title:'登录',content:content,button:""});
+				})
+			})
+			
+			//举报
+			$("#report").click(function(){
+				var content = '';
+					content = content + '<ul class="win-form">';
+					content = content + '<li class="report-name"><label class="lab">用户名：</label><strong>丁志君</strong></li>';
+					content = content + '<li class="report-reason"><label class="lab" for="reportReason">我的意见：</label><textarea id="reportReason" class="txt textarea"></textarea></li>';
+					content = content + '</ul>';
+				AM("showWin",function(){
+					App.win({id:'win-report',title:'举报',content:content,button:{title:'提交'}});
+				})
+			})
+			
+			//发私信
+			$("#sms").click(function(){
+				var content = '';
+					content = content + '<ul class="win-form link0">';
+					content = content + '<li class="sms-user"><label class="lab">发送到：</label><strong>丁志君</strong></li>';
+					content = content + '<li class="sms-title"><label class="lab" for="subject">标题：</label><input id="subject" class="txt" tabindex="1"/></li>';
+					content = content + '<li class="sms-content"><label class="lab" for="magContent">内容：</label><textarea id="magContent" class="txt textarea" tabindex="2"></textarea></li>';
+					content = content + '<li class="sms-login"><label class="lab" for="uname">用户名：</label><input id="uname" class="txt" tabindex="3"/><label class="lab lab-pass" for="upwd">密码：</label><input id="upwd" class="txt" tabindex="4"/>&nbsp;<a href="#" target="_blank">新用户注册</a></li>';
+					content = content + '</ul>';
+				AM("showWin",function(){
+					App.win({id:'win-sms',title:'发私信',content:content,button:{title:'提交'}});
+				})
+			})
+			
+			//收藏成功提示
+			$("#favorite").click(function(){
+				var content = '';
+					content = content + '<dl class="win-alert">';
+					content = content + '<dt class="msg">恭喜你，帖子收藏成功！<br /><a href="#" class="tip">立即查看“我的收藏”</a></dt>';
+					content = content + '<dd class="smiley"><img src="http://i3.dukuai.com/misc/forum/smilies/h200248.gif"></dd>';
+					content = content + '</dl>';
+				AM("showWin",function(){
+					App.win({id:'win-favorite',title:'提示',content:content,button:{title:'确定'}});
+				})
+			})
+			
+			//列表
+			$("#normal").click(function(){
+				var content = '';
+					content = content + '<ul class="win-form">';
+					content = content + '<li><label class="lab">附件：</label>登陆SB图片.png</li>';
+					content = content + '<li><label class="lab">售价：</label><strong class="color3">1</strong></li>';
+					content = content + '<li><label class="lab">购买余额：</label><strong class="color3">10</strong></li>';
+					content = content + '</ul>';
+				AM("showWin",function(){
+					App.win({title:'列表',content:content});
+				})
+			})
+			
+			//表格
+			$("#table").click(function(){
+				var content = '';
+					content = content + '<table class="win-table"><tbody>';
+					content = content + '<tr><th>标题：</th><td><p><input type="text" class="txt" /></p><p>如不是特别需要，请不要修改用户名</p></td>';
+					content = content + '<tr><th>标题：</th><td><p><input type="text" class="txt" /></p><p class="color3">文字提示</p></td>';
+					content = content + '<tr><th>用户有效期：</th><td><p><input type="text" class="txt" /> （不填为永久）</p></td>';
+					content = content + '<tr><th>禁止：</th><td><label><input type="radio" value="0" class="radio" name="banStatus">正常状态(当前状态)</label><label><input type="radio" value="1" name="banStatus" class="radio">禁止发言</label><label><input type="radio" value="2" name="banStatus" class="radio">禁止访问</label></td>';
+					content = content + '<tr><th>文字输入框：</th><td><p><textarea class="txt"></textarea></p></td>';
+					content = content + '</tbody></tbody>';
+				AM("showWin",function(){
+					App.win({title:'表格', width:400, content:content});
+				})
+			})
+			
+			//数据排列
+			$("#data").click(function(){
+				var content = '';
+					content = content + '<ul class="win-data">';
+					content = content + '<li>弹窗的宽度</li>';
+					content = content + '<li>可以自己用</li>';
+					content = content + '<li>个数X110</li>';
+					content = content + '<li>一个是110px</li>';
+					content = content + '<li>我要每行5个</li>';
+					content = content + '<li>宽度就是5*110</li>';
+					content = content + '<li>再加 + 40的间距</li>';
+					content = content + '<li>等于550+40=590</li>';
+					content = content + '</ul>';
+				AM("showWin",function(){
+					App.win({title:'数据排列',width:590,content:content});
+				})
+			})
+		})
+	</script>
+</body>
+</html>

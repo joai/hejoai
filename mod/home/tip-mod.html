@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312">
+<title>tip-mod.html</title>
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" />
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/home/default/style.css" />
+</head>
+<body>
+
+<!--=S tip-mod -->
+<div class="tip-mod">
+	<p><a href="#" target="_blank">公告：我家首页改版啦！欢迎大家来试用新版首页</a></p>
+    <a class="tip-x" href="javascript:;"></a>
+</div>
+<!--=E tip-mod -->
+
+<script type="text/javascript">
+	var AM_Config = {
+		baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+	};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+<script type="text/javascript">
+AM.ready(function(){
+	$(".tip-mod").find("a.tip-x").click(function(){
+		$(this).hide().parent().slideUp();
+	});
+});
+</script>
+
+</body>
+</html>

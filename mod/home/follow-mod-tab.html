@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312">
+<title>follow-mod-tab</title>
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" />
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/home/default/style.css" />
+</head>
+<body>
+
+<!--=S follow-mod -->
+<div class="follow-mod">
+	<h3 class="follow-hd follow-hd-tab"><a href="javascript:;">TA的粉丝</a><a href="javascript:;" class="tab-this">TA的关注</a></h3>
+	<ul class="follow-bd" style="display:none">
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-followed ygz" href="javascript:;">已关注</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+	</ul>
+    <ul class="follow-bd"  style="display:none">
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-followed ygz" href="javascript:;">已关注</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />helloweiliang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-followed ygz gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+		<li><a class="pic" target="_blank" href="#"><img alt="" src="http://static.19louimg.cn/ui/forum/home/images/50x50.png" />xiaoxiehang</a><a class="icon-follow gz" href="javascript:;">关注TA</a></li>
+	</ul>
+</div>
+<!--=E follow-mod -->
+
+
+<script type="text/javascript">
+	var AM_Config = {
+		baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+	};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+<script type="text/javascript">
+AM("tab",function(){
+	var blist=$("ul.follow-bd");
+	App.tab($(".follow-hd-tab a"),{target:blist,className:"tab-this",index:1});
+});
+</script>
+
+</body>
+</html>

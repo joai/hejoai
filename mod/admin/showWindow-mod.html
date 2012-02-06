@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="gb2312"/>
+	<title>showWindow-mod</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/admin/style.css" />
+	<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/admin/jquery.js"></script>
+	<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/admin/component.showWindow.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(function(){
+			var html = '';
+			html += '<p>内容</p>';
+			
+			$.showWindow({
+				id : "window-id",
+				title : "标题",
+				content : html
+			});
+		});
+	</script>
+</body>
+</html>

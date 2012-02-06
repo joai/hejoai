@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="gb2312"/>
+	<title>addtip-mod</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/admin/style.css" />
+	<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/admin/jquery.js"></script>
+	<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/admin/component.admincp.js"></script>
+</head>
+<body>
+	<!--=S addtip-mod -->
+	<div id="content">
+		<p class="tips" style="margin-bottom:10px;">点击按钮, 预览效果</p>
+	</div>
+	<a class="confirm_btn right" href="javascript:;"><span>正确</span></a>
+	<a class="confirm_btn error" href="javascript:;"><span>错误</span></a>
+	<!--=E addtip-mod -->
+	<script type="text/javascript">
+		$(".right").click(function(){
+			$.addtip({type: "right", message: "提示正确内容", autoclose: 3});
+		})
+
+		$(".error").click(function(){
+			$.addtip({type: "error", message: "提示错误内容", autoclose: 3});
+		})
+	</script>
+</body>
+</html>

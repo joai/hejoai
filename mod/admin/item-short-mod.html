@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="gb2312"/>
+	<title>item-short-mod</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/admin/style.css" />
+</head>
+<body>
+	<div id="content">
+		<!--S item-short-mod -->
+		<div class="item item_short">
+				<table>
+					<tbody>
+						<tr>
+							<th><label><em>用户名：</em></label></th>
+							<td>
+							<input type="text" id="usernames" value="粉丝1007" class="txt" name="uname">
+							<span class="c_gray">多个用户请用英文","隔开</span></td>
+						</tr>
+						<tr>
+							<th><label><em>操作：</em></label></th>
+							<td>
+							<input type="radio" value="0" id="freeze" name="operation">
+							<label for="freeze">冻结</label>
+							<input type="radio" checked="" value="1" id="unfreeze" name="operation">
+							<label for="unfreeze">解冻</label></td>
+						</tr>
+						<tr>
+							<th><label><em>原因：</em></label></th>
+							<td>							<textarea id="reason" name="" rows="5" cols="45" class="txt"></textarea><span id="sign_num" class="c_gray"><em>0</em>/<em>160</em></span></td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="submit">
+					<a id="submitButton" class="confirm_btn" href="javascript:;"><span>提交</span></a>
+				</p>
+		</div>
+		<!--E item-short-mod -->
+	</div>
+</body>
+</html>

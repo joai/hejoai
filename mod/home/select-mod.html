@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312">
+<title>select-mod</title>
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" />
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/home/default/style.css" />
+</head>
+<body>
+	
+<!--=S select-mod -->
+<div class="select-mod">
+	<span class="c_defaultValue iblock"><em class="iblock">筛选</em></span>
+	<div class="select-list">
+		<a href="javascript:;">全部</a>
+		<a href="javascript:;" class="selected">博客</a>
+		<a href="javascript:;">微薄</a>
+		<a href="javascript:;">帖子</a>
+		<a href="javascript:;">相册</a>
+	</div>
+</div>
+<!--=E select-mod -->
+
+<script type="text/javascript">
+	var AM_Config = {
+		baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+	};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>		
+<script type="text/javascript">
+AM.ready('home', function(){
+	var alist=$("div.select-list"),t=$("span.iblock");
+	App.hover($(".select-mod"),{className:"select-mod-hover"});
+	App.toggle(t,{className:"",status_:App.Status.FADE,index:1,action:{options:{callback:function(){}},targets:alist}});
+	App.toggle(alist.find("a"),{index:2,action:{options:{callback:function(r){t.find("em").html(r.innerHTML).click();}}}});
+});
+</script>
+</body>
+</html>

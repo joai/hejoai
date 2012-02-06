@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312">
+<title>item-mod</title>
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" />
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/home/default/style.css" />
+</head>
+<body>
+
+<!--=S friend-mod -->
+<div class="friend-mod">
+	<div class="friend-bd">
+		<ul>
+			<li><a href="javascript:;">全部好友</a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>同事</em></a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>挚交好友</em></a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>家人亲戚</em></a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>大学同学</em></a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>中小学同学</em></a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>普通朋友</em></a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>19楼上认识的</em></a></li>
+			<li><a class="friend-opt">编辑</a><a href="javascript:;"><em>未分组好友</em></a></li>
+		</ul>
+		<p><a href="javascript:;">创建新分组</a></p>
+	</div>	
+</div>
+<!--=E friend-mod -->
+	
+	
+<script type="text/javascript">
+	var AM_Config = {
+		baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+	};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+<script type="text/javascript">
+	AM('home', function(){
+		 App.hover($(".friend-bd ul li"),{className:"hover"});
+	});
+</script>
+
+</body>
+</html>

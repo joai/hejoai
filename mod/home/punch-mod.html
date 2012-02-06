@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312">
+<title>ta-user-mod</title>
+
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/forum/default/common.css" />
+<link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/trunk/css/home/default/style.css" />
+</head>
+<body>
+<!--=S punch-mod -->
+<div class="punch-mod">
+	<div class="sub-hd">
+		<h3>打卡签到</h3>
+	</div>
+	<div class="sub-bd">
+		<p>
+			<a class="confirm-btn" href="javascript:;"><span>打卡</span></a>			
+			<span class="punch-add">				
+				<strong class="icon-gold color3">+1</strong>&nbsp;&nbsp;&nbsp;
+				<strong class="icon-prestige color3">+3</strong>
+			</span>
+		</p>
+	</div>
+</div>
+<!--=E punch-mod -->	
+	
+<script type="text/javascript">
+var AM_Config = {
+	baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+};
+</script>
+<script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+<script type="text/javascript">
+AM.ready("punch", "tipers", function(){
+	$(".punch-mod .confirm-btn").click(function(){
+	if($(this).hasClass("disabled-small")) return;
+	 App.punch({punchObj:".punch-mod .confirm-btn", text:'<em style="margin-right:26px;">金币+1</em>威望+3'});
+	 App.ajax("notice",{
+			type:'POST',
+			url:"/user/checkin",               
+			success:function(res){
+				if(res.success){
+					$(".punch-mod .confirm-btn").addClass("disabled-small").html("<span>已打卡</span>");
+					//打卡 领金币气泡
+					if($("#daKaTips").length){
+						$("#daKaTips").html(res.data+'<br>');
+					}else{
+						App.tipers({jqFn:{"attr":{"class":"popo-mod popo-up"},css:{width:204,"z-index":2}},"target":$(".punch-mod .confirm-btn"),opt:{top:36,left:-115},"content":'<div id="daKaTips">'+res.data+'<br></div>'});
+					}
+				}	
+			},
+			dataType:'json'
+		})
+	});
+     
+	//打卡 领金币气泡
+	App.tipers({jqFn:{"attr":{"class":"popo-mod popo-up"},css:{width:204,"z-index":2}},"target":$(".punch-mod .confirm-btn"),opt:{top:36,left:-145},"content":'<div id="daKaTips">你已经连续打卡1天，再接再厉！<br></div>'});
+});
+</script>
+</body>
+</html>

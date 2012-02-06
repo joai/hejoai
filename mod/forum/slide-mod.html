@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>slide</title>
+    <link href="http://i3.sbsnew.com/branches/DB-0.5.4.0811-hangzhou-floor/css/forum/default/common.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="http://i3.sbsnew.com/branches/DB-0.5.4.0811-hangzhou-floor/css/city/hangzhou/floor/fashion/slide.css" />
+    <script type="text/javascript">
+        var AM_Config = {
+            baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+        };
+    </script>
+    <script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+</head>
+<body>
+<!--=S slide-mod -->
+<p>
+    <label>轮播A：</label>
+<ul class="slide-player">
+    <li>
+        <a href="#" target="_blank">
+            <img src="http://i3.dukuai.com/ui/style/09/pic/C280x200.gif" alt="" title=""/>
+            <span>提示1</span>
+        </a>
+    </li>
+    <li>
+        <a href="#" target="_blank">
+            <img src="http://i3.dukuai.com/ui/style/09/pic/C280x200.gif" alt="" title=""/>
+            <span>提示2</span>
+        </a>
+    </li>
+    <li>
+        <a href="#" target="_blank">
+            <img src="http://i3.dukuai.com/ui/style/09/pic/C280x200.gif" alt="" title=""/>
+            <span>提示3</span>
+        </a>
+    </li>
+</ul>
+</p>
+
+<p>
+    <label>轮播B：</label>
+<div id="slideImg-mod" class="slideImg-mod">
+    <ul>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /></a> <img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /></a> <img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /></a> <img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /></a> <img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /></a> <img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /></a> <img alt="" src="http://i3.dukuai.com/ui/style/09/pic/E300x400.gif" /> </li>
+    </ul>
+</div>
+</p>
+<p>
+    <label>轮播C：</label>
+<div id="slideImg-mod2" class="slideImg-mod">
+    <ul>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /></a> <img alt="提示1" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /></a> <img alt="提示2" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /></a> <img alt="提示3" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /></a> <img alt="提示4" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /> </li>
+        <li><a target="_blank" href="#"><img alt="" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /></a> <img alt="提示5" src="http://i3.dukuai.com/ui/style/09/pic/C400x300.gif" /> </li>
+    </ul>
+</div>
+</p>
+
+
+<!--=E slide-mod -->
+<script>
+    AM("slidePlayer", function() {
+        App.slidePlayer(".slide-player", {width:280,height:200})
+    });
+    AM("slideImg",function(){
+        App.slideImg();
+        App.slideImg({id:"slideImg-mod2",width:400,height:300,CSS:"aside-right",isBtn:false});
+    })
+</script>
+<style>
+    .aside-right .slide-hd{top:0;left:400px;background:#fff;filter:none;}
+    .aside-right .slide-thumb a{padding-left:8px;opacity:1;filter:alpha(opacity=100);}
+    .aside-right .slide-thumb, .aside-right .slide-thumb img{filter:none;background:#fff;}
+    .aside-right .slide-thumb{width:70px;height:400px;}
+    .aside-right .slide-thumb a:hover, .aside-right .slide-thumb a.cur{background:url(http://i3.sbsnew.com/branches/DB-0.5.4.0811-hangzhou-floor/css/forum/default/images/icon_common.png) -30px -695px no-repeat;}
+    .aside-right .slide-ft{bottom:0;width:400px;}
+</style>
+</body>
+</html>

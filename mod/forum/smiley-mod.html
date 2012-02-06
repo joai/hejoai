@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>smiley</title>
+    <link href="http://i3.sbsnew.com/branches/DB-0.5.5.0902-smiley/css/forum/default/common.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        var AM_Config = {
+            baseUrl: "http://i3.sbsnew.com/trunk/js/forum"
+        };
+    </script>
+    <script type="text/javascript" src="http://i3.sbsnew.com/trunk/js/forum/AM.js"></script>
+</head>
+<body>
+<!--=S smiley-mod -->
+<p id="insetSmiley">
+    <textarea id="content"></textarea><br/>
+    <a href="javascript:;" class="smiley-btn">
+        表情
+    </a>
+</p>
+
+
+<!--=E smiley-mod -->
+<script>
+    AM("smiley", function() {
+        //表情点击加载
+               $(".smiley-btn").click(function(){
+                   var $this=$(this);
+                   App.smiley($this,{url:"http://taizhou.19lou.com/util/smile",editor:"#content"},true);
+               });
+    });
+</script>
+</body>
+</html>
