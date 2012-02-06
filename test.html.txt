@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+		<title>运营工具-日志查询</title>
+		<meta content="" name="keywords">
+		<meta content="" name="description">
+			<link href="http://i3.qasbs.com/trunk/css/admin/style.css" type="text/css" rel="stylesheet">
+			<script src="http://i3.qasbs.com/trunk/js/admin/jquery.js" type="text/javascript"></script>
+			<script src="http://i3.qasbs.com/trunk/js/admin/component.sbsAjax.js" type="text/javascript"></script>
+			<script src="http://i3.qasbs.com/trunk/js/admin/json2.js" type="text/javascript"></script>
+			<script src="http://i3.qasbs.com/trunk/js/admin/json2.js" type="text/javascript"></script>
+			<script src="http://i3.qasbs.com/trunk/js/admin/component.admincp.js" type="text/javascript"></script>
+			<script src="http://i3.qasbs.com/trunk/js/admin/component.calendar.js" type="text/javascript"></script>
+			<script src="http://i3.qasbs.com/trunk/js/admin/component.validate.js" type="text/javascript"></script>
+	</head>
+	<body>
+<div id="content">
+			<div class="itemtitle"><h3>日志查询</h3></div>
+			<div id="tab">
+				<div id="tab_title" class="mt10">
+					<h5 class="selected">
+                            品牌帐号日志
+                    </h5>
+					<h5>
+                            <a href="http://server2.qa-53.com/admin/business/log?searchType=2">帖子操作日志</a>
+					</h5>
+				</div>
+				<div id="tab_content">
+					<div class="itemlist">
+						<div class="search">
+							<table>
+								<tbody>
+									<tr>
+										<td width="10%" align="right">
+                                                精确查找 (品牌帐号):
+                                        </td>
+										<td align="left"><input type="text" value="" class="txt" id="search"></td>
+									</tr>
+									<tr>
+										<td align="right">时间段:</td>
+										<td align="left"><input type="text" value="" class="txt" onclick="showcalendar(event);" id="startAt">&nbsp;-&nbsp;<input type="text" value="" class="txt" onclick="showcalendar(event);" id="endAt">&nbsp;&nbsp;
+                                            <a id="queryButton" class="confirm_btn"><span>搜索</span></a>
+                                        </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<table class="mt10">
+							<thead>
+								<tr>
+									<th width="15%">操作人</th>
+									<th width="20%">操作记录</th>
+									<th width="20%">操作时间</th>
+									<th width="45%">明细</th>
+								</tr>
+							</thead>
+							<tbody id="data">
+							</tbody>
+							<tfoot class="tfoot">
+								<tr class="admin_pages_btns">
+									<td colspan="4">
+<div class="admin_pages">
+	<strong>1</strong>
+
+	<a class="last" href="/admin/business/log?searchType=1&amp;search=&amp;startAt=&amp;endAt=&amp;page=1
+">下一页</a>
+	<div class="go"><span>到第</span><input type="text" class="txt" value="1" name="pageNumber"><span>页</span><button onclick="pageOKButton(this)" type="button">确定</button></div>
+</div>
+<script type="text/javascript">	
+//分页确认按钮	
+	function pageOKButton(obj){
+		var pageNumber = $(obj).prev().prev().val();	
+		pageNumber = $.trim(pageNumber);				
+		if(pageNumber != parseInt(pageNumber)){
+			$.addtip({type: "error", message: "跳转页码必须为数值", autoclose: 3});
+			$(obj).prev().prev().focus();
+			return false;
+		}
+        pageNumber = parseInt(pageNumber);
+		if(pageNumber &lt; 1){
+			pageNumber = 1;
+		}
+		var url = "/admin/business/log?searchType=1&amp;search=&amp;startAt=&amp;endAt=&amp;page={page}";
+		url = url.replace("\{page\}", pageNumber);
+		window.location = url;
+	}
+</script>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+<script type="text/javascript">
+    $.tablehover("#content #data tr");
+
+    $("#queryButton").click(function(){
+        $("#search").val($.trim($("#search").val()))
+        if (!$("#search").validate({"required":true})) {
+            $.addtip({type: "error", message: "请输入要搜索的内容", autoclose: 3});
+            $("#search").focus();
+            return false
+        }
+        var url = "/admin/business/log?";
+        url += "searchType=" + 1;
+        url += "&amp;startAt=" + $("#startAt").val();
+        url += "&amp;endAt=" + $("#endAt").val();
+        url += "&amp;search=" + encodeURIComponent($.trim($("#search").val()));
+        window.location = url;
+    });
+
+    //移动分类
+    $(".moveType").click(function() {
+        var cont = "&lt;table class='showWindow_table'&gt;&lt;tr&gt;&lt;th&gt;&lt;label&gt;移动到:&lt;/label&gt;&lt;/th&gt;&lt;td&gt;&lt;select&gt;&lt;option selected&gt;请选择&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;&lt;label&gt;排序:&lt;/label&gt;&lt;/th&gt;&lt;td&gt;&lt;input type='text' class='txt' /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+        $.showWindow({idname:"",title:"移动分类",content:cont,width:"280",height:"180",button:{idname:"confirm_id",title:"确定",classname:"confirm_btn"},masking:0});
+    });
+
+</script>
+	
+
+</body></html>
